@@ -8,7 +8,9 @@ En esta carpeta estan implementados cada uno de los diferentes sensores de los q
 
 
 ## PROYECTOS CON LA PLACA NodeMCU
-1. **Proyecto1**  
+1. **proyecto1**  
 Lectura de la humedad y temperatura ambiente por medio del sensor DHT22.
 Creacion de un cliente. Uso del protocolo IFTTT
+2. **util**    
+En esta carpeta se almacenan los componentes comunes para todos los proyectos
 

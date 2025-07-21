@@ -1,5 +1,20 @@
-## PROYECTOS Coche autonomo
-Proyecto con la placa arduino
+# PROYECTOS Coche autonomo
 Proyecto que crea los diferentes componentes para el control de un coche.
+Proyecto con la placa arduino
 
-# Componentes necesarios
+## Componentes necesarios
+
+## Para la construccion
+    1) Realizar el montaje de las ruedas
+        Crograma de prueba, comprobacion movimiento: movimiento para adelante --> Movimiento para atras --> parar 
+	2) Montaje de sensor de ultrasonido
+	    Programa de prueba, comprobacion detection de obstacurlos: comprobar distancia objetos
+	3) Realizacion de programa para el control de motores y sensor de proximidad
+		Movimiento delante
+		Para al detectar el obstaculo
+		Movimiento trasero
+		Giro
+		Movimiento delantero
+		LOOP
+
+[instrucciones](https://www.luisllamas.es/tag/robot-car/)

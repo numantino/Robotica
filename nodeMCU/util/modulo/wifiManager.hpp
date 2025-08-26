@@ -6,7 +6,7 @@ private:
   WiFiServer server = WiFiServer(80);
 public:
   /**
-   * Conexion de wifo modo AP
+   * Conexion de wifi modo AP
    */
   void initAP(const char* ssid, const char* password) {
     WiFi.mode(WIFI_AP);
@@ -17,7 +17,7 @@ public:
   }
 
   /**
-   * Conexion de wifo modo STA
+   * Conexion de wifi modo STA
    */
   void initSTA(const char* ssid, const char* password) {
     WiFi.mode(WIFI_STA);

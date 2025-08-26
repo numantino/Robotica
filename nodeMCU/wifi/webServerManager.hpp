@@ -6,6 +6,9 @@ private:
   WiFiServer server = WiFiServer(80);
 
 public:
+  /**
+   * Conexion de wifi modo STA
+   */
   void initSTA(const char* ssid, const char* password) {
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
@@ -21,12 +24,16 @@ public:
     Serial.println(WiFi.localIP());
   }
 
-  // Método para obtener un cliente conectado
+  /**
+   * @return Método para obtener un cliente conectado
+   */
   WiFiClient getClient() {
     return server.available();
   }
 
-  // Muestra cualquier HTML que le pases
+  /**
+   * Muestra cualquier HTML que le pases
+   */
   void showPage(WiFiClient &client, String html) {
     client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/html; charset=utf-8");
@@ -35,7 +42,9 @@ public:
     client.println(html);
   }
 
-  // Extrae un parámetro de la petición (?clave=valor)
+  /**
+   * Extrae un parámetro de la petición (?clave=valor)
+   */
   String getParam(String request, String key) {
     String search = key + "=";
     int index = request.indexOf(search);
@@ -46,7 +55,9 @@ public:
     return request.substring(start, end);
   }
 
-  // Lee la petición HTTP completa
+  /**
+   * Lee la petición HTTP completa
+   */
   String readRequest(WiFiClient &client) {
     String request = "";
     unsigned long timeout = millis();

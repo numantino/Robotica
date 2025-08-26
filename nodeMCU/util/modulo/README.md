@@ -92,9 +92,9 @@ En cambio si no se quiere apagar, se puede poner un modo para el ahorro de energ
 Con la clase **powerManager.hpp** se puede controlar el ahorro de energia mediante el apagado del microprocesador. Con esto la energia que consume es de <span style="color: red;">20 µA</span>, este es el llamado **deep sleep**.<br>
 Para este tipo de apagado ademas se tiene que configurar la parte hardware del dispositivo, y para ello lo que tendremos que hacer es conectar el pin GPIO 16 (D0) con el pin RST (reset), esto es muy importante para que se pueda realizar el rearranque del dispositivo.<br>
 ![Esquema](../../doc/reset.png)<br>
-![Listado de consumo](../../doc/consumo.png.png)<br>
-**!Importante:** Antes de cargar el código desconecta el pin RST del pin GPIO 16 ya que esto no permite que el código se cargue en la placa desde el IDE de Arduino.<br>
-**!Nota** Todo el código que está después de llamar a la función ESP.deepSleep(20e6), no se ejecuta ya que una vez entra en el modo ESP8266 deep sleep, el microcontrolador se duerme y deja de ejecutar las siguientes sentencias. Cuando se despierta, empieza por el principio del código.
+![Listado de consumo](../../doc/consumo.png)<br>
+<span style="background-color: grey;">**!Importante:** Antes de cargar el código desconecta el pin RST del pin GPIO 16 ya que esto no permite que el código se cargue en la placa desde el IDE de Arduino</span>.<br>
+<span style="background-color: grey;">**!Nota** Todo el código que está después de llamar a la función ESP.deepSleep(20e6), no se ejecuta ya que una vez entra en el modo ESP8266 deep sleep, el microcontrolador se duerme y deja de ejecutar las siguientes sentencias. Cuando se despierta, empieza por el principio del código.</span>.<br>
 
 Esto es un ejemplo:
 ```c++

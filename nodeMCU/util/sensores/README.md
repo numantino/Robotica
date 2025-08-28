@@ -169,7 +169,7 @@ El código se encuentra en el fichero **sensorInflarrojos.hpp**. La forma de lla
 ### El sensor:
 En este sensor no es necesario una fuente extra de alimentacion 
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="../../doc/sensorInlfarrojos.png.png" style="max-width: 200px; margin-right: 20px;">
+  <img src="../../doc/sensorInlfarrojos.png" style="max-width: 200px; margin-right: 20px;">
   <p>Las entradas son:<br/>
   **VCC** = Alimentacion, no necesita extra, se peude conectar a 3v o 5v<br/>
   **GND** = Alimentacion, tierra<br/>

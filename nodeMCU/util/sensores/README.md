@@ -22,9 +22,9 @@ El código se encuentra en el fichero **sensorDHT22.hpp**. Para esta clase es ne
       float t = sensorDHT22.getTemperatura();
       float h = sensorDHT22.getHumedad();
       // Metodo para mostrar la informacion por la consola
-      sensorDHT22.toConsole();
+      sensorDHT22.toConsole(datos);
       // Metodo para generar html con la informacion
-      String html = sensorDHT22.toHtml();
+      String html = sensorDHT22.toHtml(datos);
     }
 ```
 ### El sensor:
@@ -44,8 +44,7 @@ El código se encuentra en el fichero **sensorYL69.hpp**. Existen dos variables 
 * **humbral (int)**, Nos indica el humbrar que le damos al sensor para que este nos indique si la tierra esta humeda o no.
 * **nombre (String)**, Nombre del dispositivo, ya que podriamos tener varios de ellos y asi los podemos identificar. <br>
 
-<br>La forma de llamarlo es: <br>
-
+La forma de llamarlo es: <br>
 ```c++
     //Informacion del pin donde se conecta
     #define SENSOR_YL69 D2
@@ -66,9 +65,9 @@ El código se encuentra en el fichero **sensorYL69.hpp**. Existen dos variables 
       // Recuperar los valores de humedad
       float h = sensorYL69.getHumedad();
       // Metodo para mostrar la informacion por la consola
-      sensorYL69.toConsole();
+      sensorYL69.toConsole(h);
       // Metodo para generar html con la informacion
-      String html = sensorYL69.toHtml();
+      String html = sensorYL69.toHtml(h);
     }
 ```
 ### El sensor:
@@ -82,3 +81,34 @@ En este sensor no es necesario una fuente extra de alimentacion
   **GND** = Alimentacion, tierra
   </p>
 </div>
+
+## Sensor LDR
+Con este sensor podemo ver la canditad de luz que tenemos. El código se encuentra en el fichero **sensorLDR.hpp**.<br>
+<span style="background-color: grey;">**!Importante:** En este caso la conexion es a un pin analógico</span><br>
+
+La forma de llamarlo es: <br>
+```c++
+  #include "SensorLDR.hpp"
+
+  //Informacion del pin donde se conecta
+  #define PIN_LDR A0    //Seleccionamos el pin analógico A0 como input del sensor LDR. 
+
+  SensorLDR sensorLdr;
+
+  void setup() { 
+    Serial.begin(9600); //Inicializamos monitor serie para visualizar los valores de LDR. 
+    sensorLdr.init(PIN_LDR);
+  }
+
+  void loop() { 
+    delay(1000);                          // esperar un segundo  
+
+    int valor = sensorLdr.lecturaNormal();
+    sensorLdr.toConsole(valor);
+    sensorLdr.toConsole(sensorLdr.lecturaNivelLuz(valor));
+  }
+```
+### El sensor:
+En este sensor no es necesario una fuente extra de alimentacion, pero si que es necesario que se ponga una resistencia para el correcto funcionamiento. <br>
+![Esquema](../../doc/sensorLDR.png)
+![Esquema](../../doc/sensorLDR_conexion.png)<br>

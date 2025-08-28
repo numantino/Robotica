@@ -36,26 +36,40 @@ class SensorDHT22 {
     }
     /**
      * Funcion que nos muestra por consola los datos
+	 * @param data datos del dispositivo
      */
-    void toConsole(){
+    void toConsole(TempAndHumidity data){
       Serial.print("Lectura datos sensor DHT22[t= ");
-      Serial.print(getTemperatura());
+      Serial.print(data.temperature);
       Serial.print("ºC, h= ");
-      Serial.print(getHumedad());
+      Serial.print(data.humidity);
       Serial.println("%]");
     }
     /**
      * Funcion que nos genera el html que queremos mostrar
+	 * @param data datos del dispositivo
      */
-    String toHtml(){
-      TempAndHumidity data = leer();
-      String html = "<!DOCTYPE html><html><head><title>DHT22</title>";
-            html += "<meta http-equiv='refresh' content='5'>";
-            html += "</head><body>";
-            html += "<h1>Sensor DHT22</h1>";
-            html += "<p>Temperatura: " + String(data.temperature, 1) + " °C</p>";
-            html += "<p>Humedad: " + String(data.humidity, 1) + " %</p>";
-            html += "</body></html>";
-      return html;
-    }
+	String toHtml(TempAndHumidity data) {
+	  String html = R"rawliteral(
+		<!DOCTYPE html><html lang="es">
+		<head>
+		  <meta charset="UTF-8">
+		  <title>DHT22</title>
+		  <meta http-equiv='refresh' content='5'>
+		  <style>
+			body { font-family: Arial; background: #111; color: #fff; text-align:center; }
+			.value { font-size: 3rem; font-weight: bold; }
+			.temp { color: #ff4c29; }
+			.hum { color: #4cd3ff; }
+		  </style>
+		</head>
+		<body>
+		  <h1>Sensor DHT22</h1>
+	  )rawliteral";
+
+	  html += "<div class='value temp'>" + String(data.temperature, 1) + " °C</div>";
+	  html += "<div class='value hum'>" + String(data.humidity, 1) + " %</div>";
+	  html += "</body></html>";
+	  return html;
+	}
 };

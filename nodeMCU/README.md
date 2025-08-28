@@ -30,4 +30,4 @@ Si queremos mas informacin sobre el modilo se puede ver en la [web](https://prog
 - **Proyecto 1**, Lectura de la humedad y temperatura ambiente por medio del sensor DHT22.<br>
 Creacion de un cliente. Uso del protocolo IFTTT
 - **Proyecto huerto**, simulamos un huerto. [Descripcion](proyectoHuerto/README.md)
-- **wifi**, ejemplo del manejo de la wifi, tanto creacion de una red propia como conectarse a la propia red.
+- **wifi**, ejemplo del manejo de la wifi, proyecto en el que nos conectamos a nuestra propia wifi y realizamso la solicitud de un dato, para luego mostrarlo.

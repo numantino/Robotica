@@ -20,7 +20,7 @@ public:
   void deepSleepSec(uint64_t seconds) {
     deepSleepMs(seconds * 1000ULL);
   }
-  
+
   /**
    * Realizamos el sleep del dispositivo
    * @param hours tiempo de apagado en horas

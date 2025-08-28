@@ -50,20 +50,22 @@ class SensorYL69 {
     }
     /**
      * Funcion que nos muestra por consola los datos
+	 * @param humedad dato de la humedad
      */
-    void toConsole(){
+    void toConsole(float humedad){
       Serial.print("Lectura datos sensor YL69[");
       Serial.print(nombre);
       Serial.print("]: ");
-      Serial.print(getHumedad());
+      Serial.print(humedad);
       if (isSeco()) Serial.println(" --> necesita regarse");
       else Serial.println(" --> esta humedo, no necesita riego");
     }
     /**
      * Funcion que nos genera el html que queremos mostrar
+	 * @param humedad dato de la humedad
      */
-    String toHtml(){
-      String html = "<p>Humedad del suelo: " + String(getHumedad()) + ", del dispositivo: " + String(nombre) + "</p>";
+    String toHtml(float humedad){
+      String html = "<p>Humedad del suelo: " + String(humedad) + ", del dispositivo: " + String(nombre) + "</p>";
       html += "<p>";
       if(isSeco()) html += "Necesita riego";
       html += "</p>";

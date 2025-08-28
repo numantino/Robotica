@@ -112,3 +112,67 @@ La forma de llamarlo es: <br>
 En este sensor no es necesario una fuente extra de alimentacion, pero si que es necesario que se ponga una resistencia para el correcto funcionamiento. <br>
 ![Esquema](../../doc/sensorLDR.png)
 ![Esquema](../../doc/sensorLDR_conexion.png)<br>
+
+## Sensor HC-SR04
+Es un sensor de ultrasonidos, con el que se puede medir la distancia de objetos.<br> 
+El código se encuentra en el fichero **sensorHCSR04.hpp**. Para esta clase es necesario importar la libreria **NewPing.h** y la forma de llamarlo es: <br>
+```c++
+  #include "sensorHCSR04.hpp"
+
+  SensorHCSR04 sensor(5, 6); // trigger = 5, echo = 6
+
+  void setup() { 
+    Serial.begin(9600); 
+  }
+
+  void loop() { 
+    int d = sensor.getDistancia();
+    sensor.toConsole(d);
+    delay(500);
+  }
+```
+### El sensor:
+En este sensor no es necesario una fuente extra de alimentacion 
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <img src="../../doc/sensorHCSR04.png" style="max-width: 200px; margin-right: 20px;">
+  <p>Las entradas son:<br/>
+  **VCC** = Alimentacion, no necesita extra, se peude conectar a 3v o 5v<br/>
+  **GND** = Alimentacion, tierra<br/>
+  **trig** = conectamos a un pin de datos<br/>
+  **echo** = conectamos a un pin de datos
+  </p>
+</div>
+
+## Sensor inflarrojos
+Es un sensor de inlfarrojos, con el podemos seguir lineas. Es necesario siempre tener dos sensores.<br>
+Opcionalmente, calibramos el umbral de disparo acercando un objeto al detector de obstáculos y regulando la salida digital con el potenciómetro. Si queréis saltaros este paso, dejar el potenciómetro en un valor medio.<br> 
+El código se encuentra en el fichero **sensorInflarrojos.hpp**. La forma de llamarlo es: <br>
+```c++
+  #include "sensorInflarrojos.hpp"
+
+  #define PIN D1 
+
+  SensorInflarrojos sensorInflarrojo;
+
+  void setup() { 
+    Serial.begin(9600); 
+    sensorInflarrojo.init(PIN);
+  }
+
+  void loop() { 
+    if (sensorInflarrojo.isObstaculo()){
+      Serial.println("Detectado obstaculo");
+    }
+    delay(1000);
+  }
+```
+### El sensor:
+En este sensor no es necesario una fuente extra de alimentacion 
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <img src="../../doc/sensorInlfarrojos.png.png" style="max-width: 200px; margin-right: 20px;">
+  <p>Las entradas son:<br/>
+  **VCC** = Alimentacion, no necesita extra, se peude conectar a 3v o 5v<br/>
+  **GND** = Alimentacion, tierra<br/>
+  **out** = conectamos a un pin de datos
+  </p>
+</div>

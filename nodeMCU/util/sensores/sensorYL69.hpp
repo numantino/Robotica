@@ -4,6 +4,9 @@
 #pragma once
 #include <DHTesp.h> 
 
+//Nos indica el humbrar de humedad (para la sensibilidad del sensor)
+const int DEFAULT_HUMBRAL=800;
+
 class SensorYL69 {
   private:
     int humbral;

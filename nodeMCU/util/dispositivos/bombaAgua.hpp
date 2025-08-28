@@ -1,8 +1,11 @@
 /*
  * Clase encargada del control de la bomba de agua
  */
- #pragma once
+#pragma once
 #include <DHTesp.h> 
+
+// Tiempo default de riego (Delay 20 sec.)
+const int T_BOMBA=7000;
 
 class BombaAgua {
   private:

@@ -2,7 +2,8 @@
  * CONEXION MEDIANTE IFTTT
  * 
  * Usamos la plataforma https://ifttt.com
- * 
+ *
+ * Version: 1.0 
  */
 #include "ESP8266_Utils.hpp"
 

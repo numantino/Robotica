@@ -1,6 +1,8 @@
 /*
  * Clase encargada del control del sensor de inflarrojos
  * Con estos sonsores, minimo dos, se puede seguir una linea
+ *
+ * Version: 1.0 
  */
 #pragma once
 

@@ -1,5 +1,7 @@
 /*
  * Clase encargada del control del sensor de humedad de la tierra
+ *
+ * Version: 1.0 
  */
 #pragma once
 #include <DHTesp.h> 

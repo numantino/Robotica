@@ -1,5 +1,7 @@
 /*
  * Clase encargada del control del sensor de la cantidad de luz
+ * 
+ * Version: 1.0 
  */
 #pragma once
 #include <DHTesp.h> 

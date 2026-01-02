@@ -1,6 +1,8 @@
 /*
  * Clase encargada del control del sensor de ultrasonidos
  * Es un dispositivo con el que se pueden medir distancias
+ *
+ * Version: 1.0 
  */
 #pragma once
 

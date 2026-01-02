@@ -1,5 +1,6 @@
 /*
  * Clase encargada del control de la bomba de agua
+ * Version: 1.0
  */
 #pragma once
 #include <DHTesp.h> 
